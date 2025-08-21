@@ -60,7 +60,7 @@ fi
 **⚠️ Warning**: Only do this if you also want to remove all Cursor editor settings and data.
 
 ```bash
-# Remove Cursor editor application data (~91MB)
+# Remove Cursor editor application data
 rm -rf ~/Library/Application\ Support/Cursor
 
 # Remove Cursor editor caches (if they exist)
