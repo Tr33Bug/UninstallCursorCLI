@@ -6,7 +6,7 @@ This guide provides step-by-step instructions to completely remove cursor-cli an
 
 When you run `curl https://cursor.com/install -fsS | bash`, it installs:
 
-- **Main installation**: `~/.local/share/cursor-agent/` (~136MB)
+- **Main installation**: `~/.local/share/cursor-agent/` (at my system its around ~136MB)
 - **Symlink**: `~/.local/bin/cursor-agent` 
 - **PATH modification**: Adds `~/.local/bin` to your shell's PATH in `~/.zshrc`
 
@@ -66,9 +66,6 @@ rm -rf ~/Library/Application\ Support/Cursor
 # Remove Cursor editor caches (if they exist)
 rm -rf ~/Library/Caches/com.todesktop.230313mzl4w4u92.ShipIt
 
-# Remove browser data for cursor.com sites (Firefox example)
-# Note: This will remove saved passwords, cookies, etc. for cursor.com
-find ~/Library/Application\ Support/Firefox -name "*cursor*" -exec rm -rf {} + 2>/dev/null || true
 ```
 
 ### 5. Restart your terminal
@@ -98,10 +95,9 @@ echo $PATH | grep -o '\.local/bin'  # Should return nothing
 
 ## Summary of Removed Files and Directories
 
-- `~/.local/share/cursor-agent/` (136MB) - Main installation directory
+- `~/.local/share/cursor-agent/` - Main installation directory
 - `~/.local/bin/cursor-agent` - Symlink to the binary
 - PATH modification in `~/.zshrc` - Shell configuration change
-- Optional: `~/Library/Application Support/Cursor/` (91MB) - Cursor editor data
-- Optional: Browser data for cursor.com domains
+- Optional: `~/Library/Application Support/Cursor/`  - Cursor editor data
 
 If you find any problems or have any feedback to the progress, feel free to make a PR or Issue. 
